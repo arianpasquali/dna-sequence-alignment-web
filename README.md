@@ -20,3 +20,10 @@ just run it
 ```
 
 Oopen your browser at [http://localhost:9000](http://localhost:9000)
+
+Screenshots
+-----------
+
+![form](https://raw.githubusercontent.com/arianpasquali/dna-sequence-alignment-web/master/screenshots/form.png)
+
+![result](https://raw.githubusercontent.com/arianpasquali/dna-sequence-alignment-web/master/screenshots/result.png)
