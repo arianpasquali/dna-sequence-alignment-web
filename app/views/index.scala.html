@@ -1,0 +1,59 @@
+@(helloForm: Form[Application.AlignmentData])
+
+@import helper._
+
+@main(title = "Sequence Alignment Tool") {
+    
+    <h1>Configure your 'alignment':</h1>
+    
+    <p>
+    Try this example.
+    </p>
+    <p class="output">
+    >Pyrococcus furiosus
+    </br>
+    MAWKVSVDQDTCIGDAICASLCPDVFEMNDEGKAQPKVEVIEDEELYNCAKEAMEACPVS
+    </br>
+    >Thermococcus barophilus
+    </br>
+    MKVKLDKDTCIGCGVCASICPDVFEMDDDGKAKVIMEETDLECAKEAAESCPTGSI
+    </p>
+
+    @form(action = routes.Application.align, args = 'id -> "helloform") {
+        
+        @inputText(
+            field = helloForm("sequenceA"),
+            args = '_label -> "Sequence A", 'size -> 30
+        )
+
+        @inputText(
+            field = helloForm("sequenceB"),
+            args = '_label -> "Sequence B", 'size -> 30
+        )
+        
+        @select(
+            field = helloForm("matrixCost"), 
+            options = options(
+                "NONE" -> "none",
+                "BLOSUM" -> "BLOSUM",
+                "PAM" -> "PAM"
+            ),
+            args = '_label -> "Choose a matrix cost"
+        )
+
+        @select(
+            field = helloForm("alignmentType"), 
+            options = options(
+                "local" -> "Local",
+                "global" -> "Global"
+            ),
+            args = '_label -> "Choose type"
+        )
+        
+        <p class="buttons">
+            <input type="submit">
+        <p>
+        
+    }
+    
+}

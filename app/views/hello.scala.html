@@ -1,0 +1,44 @@
+@(
+sequenceA:String, 
+sequenceB:String, 
+alignmentType:String, 
+matrixCost:String,
+score:Int,
+output:String)
+
+@main("Alignment result:") {
+    
+
+    <div class="container">
+     <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Sequence A</h4>
+          <p class="output">@sequenceA</p>
+
+          <h4>Sequence B</h4>
+          <p class="output">@sequenceB</p>
+
+          <h4>Alignment type</h4>
+          <p>@alignmentType</p>
+
+          <h4>Matrix Cost</h4>
+          <p>@matrixCost</p>
+
+          <h4>Score</h4>
+          <p>@score</p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>result</h4>
+          <p class="output">@Html(output)</p>
+        </div>
+      </div>
+
+    </div>
+
+    
+    <p class="buttons">
+        <a href="@routes.Application.index">Back to the form</a>
+    </p>
+    
+}
